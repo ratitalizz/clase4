@@ -10,18 +10,25 @@
   <div class="titulo"> Formulario Ingreso de datos </div>
   <div class="contenido">
     <!--etiqueta flotante -->
-    <ion-item>
-      <ion-label position="floating">Nombre completo</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Rut:</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Comentario:</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-label>{{valor}} </ion-label>
+    <form [formGroup]="persona" (ngSubmit)="grabar()">
+      <ion-item>
+        <ion-label position="floating">Nombre completo:</ion-label>
+        <ion-input placeholder="Ingrese su nombre" formControlName="elNombreCompleto"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Rut:</ion-label>
+        <ion-input placeholder="Ingrese su rut" formControlName="elRut"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Edad:</ion-label>
+        <ion-input placeholder="Ingrese su edad" formControlName="laEdad"></ion-input>
+      </ion-item>
+      <ion-label>{{valor}} </ion-label>
+      <ion-button color="success" type="submit">Grabar </ion-button>
+      <ion-button color="primary" type="submit">Listar </ion-button>
+      <ion-button color="danger" >Eliminar </ion-button>
+      <ion-label>listado</ion-label>
+    </form>
   </div>
+
 </ion-content>
